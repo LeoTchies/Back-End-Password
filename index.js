@@ -11,10 +11,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req,res) => {
-    res.sendFile(__dirname + "/public/index.html")});
+    res.sendFile(__dirname + "/index.html")});
 
 app.get("/secret", (req,res) => {
-    res.sendFile(__dirname + "/public/secret.html")});   
+    res.sendFile(__dirname + "/secret.html")});   
     
 app.post("/check", (req, res) => {
   const password = req.body.password;
@@ -22,7 +22,7 @@ app.post("/check", (req, res) => {
   if (password === "novidades") {   
     res.redirect("/secret");
   } else {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/index.html");
   }
 }); 
 
